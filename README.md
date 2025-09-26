@@ -1,6 +1,6 @@
 
 # 🤖 OpenRouter Workshop
-*A 2-hour hands-on introduction to AI API integration*
+*A hands-on introduction to AI API integration*
 
 > **⏱️ Perfect for beginners** | **✨ Easy-to-follow examples** | **🚀 Build in minutes**
 
@@ -97,38 +97,6 @@ print(response.choices[0].message)
 
 ---
 
-## 🛠️ Hands-On Exercises
-
-### Exercise 1: Your First AI Call (5 minutes)
-**Task**: Modify the basic chat example to ask about your favorite hobby.
-
-**Goal**: Get comfortable with the API structure.
-
-### Exercise 2: Model Explorer (10 minutes)
-**Task**: Try the same prompt with 3 different models and compare responses.
-
-**Goal**: Understand model differences.
-
-### Exercise 3: Build a Simple Q&A Bot (15 minutes)
-**Task**: Create a continuous conversation loop.
-
-**Goal**: Practice handling conversation history.
-
----
-
-## 📁 Project Structure
-```
-workshop/
-├── examples/          # 📚 Complete code samples
-│   ├── basic_chat.py
-│   ├── streaming_chat.py
-│   └── model_comparison.py
-├── exercises/         # 🏋️ Starter files for exercises
-│   ├── exercise1.py
-│   ├── exercise2.py
-│   └── exercise3.py
-└── solutions/         # ✅ Exercise solutions
-```
 
 ---
 
