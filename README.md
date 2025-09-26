@@ -71,7 +71,28 @@ while True:
         print("Error:", response.status_code, response.text)
 ```
 
+### 1.1 Basic Chat Completion (Something similar)
+```from dotenv import load_dotenv
+import os
+from openai import OpenAI
+import openai
 
+load_dotenv()
+
+open_api_key = os.getenv("OPEN_ROUTER_KEY")
+
+llm = OpenAI(
+    api_key=open_api_key,
+    base_url='https://openrouter.ai/api/v1'
+)
+
+messages = [{"role": "user", "content": "Who is the CEO of OpenAI?"}]
+response = llm.chat.completions.create(
+    model="nvidia/nemotron-nano-9b-v2:free",
+    messages=messages
+)
+print(response.choices[0].message)
+```
 
 
 ---
