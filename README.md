@@ -41,18 +41,34 @@ pip install openrouter
 ```python
 import requests
 
-response = requests.post(
-    url="https://openrouter.ai/api/v1/chat/completions",
-    headers={
-        "Authorization": f"Bearer YOUR_API_KEY",
-    },
-    data={
-        "model": "openai/gpt-3.5-turbo",
-        "messages": [{"role": "user", "content": "Hello!"}]
-    }
-)
+API_KEY = "enter your api"
+url = "https://openrouter.ai/api/v1/chat/completions"
 
-print(response.json()["choices"][0]["message"]["content"])
+headers = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json"
+}
+
+messages = [{"role": "system", "content": "You are a helpful chatbot."}]
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() in ["quit", "exit"]:
+        break
+
+    messages.append({"role": "user", "content": user_input})
+
+    response = requests.post(url, headers=headers, json={
+        "model": "x-ai/grok-4-fast:free",  # can change model here
+        "messages": messages
+    })
+
+    if response.status_code == 200:
+        reply = response.json()["choices"][0]["message"]["content"]
+        print("Bot:", reply)
+        messages.append({"role": "assistant", "content": reply})
+    else:
+        print("Error:", response.status_code, response.text)
 ```
 
 ### 2. Streaming Response
