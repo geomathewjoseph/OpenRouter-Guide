@@ -71,15 +71,8 @@ while True:
         print("Error:", response.status_code, response.text)
 ```
 
-### 2. Streaming Response
-```python
-# See full example in: examples/streaming_chat.py
-```
 
-### 3. Multiple Models Comparison
-```python
-# Check: examples/model_comparison.py
-```
+
 
 ---
 
